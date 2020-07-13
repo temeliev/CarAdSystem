@@ -12,6 +12,13 @@ namespace CarRentalSystem.Domain.Factories.Dealers
             return new Dealer(dealerName, dealerPhoneNumber);
         }
 
+        public Dealer Buid(string name, string phoneNumber)
+        {
+            return this.WithName(name)
+                       .WithPhoneNumber(phoneNumber)
+                       .Buid();
+        }
+
         public IDealerFactory WithName(string name)
         {
             dealerName = name;
